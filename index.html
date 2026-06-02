@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <title>Monblan Gallery</title>
+    <meta name="description"
+        content="Monblan gallery profile with post filtering by date, grid and list view switching, load more functionality and responsive design.">
+    <script defer="defer" src="assets/js/main.js"></script>
+</head>
+
+<body class="site">
+    <header class="account-panel">
+        <div class="account-panel__wrap"><a class="brand-mark" href="#"><span class="brand-mark__shape"></span></a>
+            <section class="account-info">
+                <div class="account-info__head">
+                    <h1 class="account-info__name" id="account-title">monblanproject</h1><button
+                        class="account-info__since" type="button">Start on 17-02-2016</button>
+                </div>
+                <dl class="account-info__numbers profile-numbers">
+                    <div class="profile-numbers__cell">
+                        <dt class="profile-numbers__name">posts</dt>
+                        <dd class="profile-numbers__count">870</dd>
+                    </div>
+                    <div class="profile-numbers__cell">
+                        <dt class="profile-numbers__name">followers</dt>
+                        <dd class="profile-numbers__count">11,787</dd>
+                    </div>
+                    <div class="profile-numbers__cell">
+                        <dt class="profile-numbers__name">following</dt>
+                        <dd class="profile-numbers__count">112</dd>
+                    </div>
+                </dl>
+                <form class="date-range"><strong class="date-range__caption">Date</strong>
+                    <div class="date-range__wrapper">
+                        <div class="date-range__field"><label class="visually-hidden" for="period-start">Date
+                                from</label> <input class="date-range__input" id="period-start" placeholder="from"
+                                autocomplete="off" /> <button class="date-range__action date-range__action--reset"
+                                type="button" data-reset="start"><i class="fa-solid fa-xmark"></i></button> <button
+                                class="date-range__action date-range__action--pick" type="button"
+                                data-calendar="start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 11H9V13H7V11ZM7 15H9V17H7V15ZM11 11H13V13H11V11ZM11 15H13V17H11V15ZM15 11H17V13H15V11ZM15 15H17V17H15V15Z"
+                                        fill="#5F5F5F" />
+                                    <path
+                                        d="M5 22H19C20.103 22 21 21.103 21 20V6C21 4.897 20.103 4 19 4H17V2H15V4H9V2H7V4H5C3.897 4 3 4.897 3 6V20C3 21.103 3.897 22 5 22ZM19 8L19.001 20H5V8H19Z"
+                                        fill="#5F5F5F" />
+                                </svg></button></div>
+                        <div class="date-range__field"><label class="visually-hidden" for="period-end">Date to</label>
+                            <input class="date-range__input" id="period-end" placeholder="to" autocomplete="off" />
+                            <button class="date-range__action date-range__action--reset" type="button"
+                                data-reset="end"><i class="fa-solid fa-xmark"></i></button> <button
+                                class="date-range__action date-range__action--pick" type="button"
+                                data-calendar="end"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M7 11H9V13H7V11ZM7 15H9V17H7V15ZM11 11H13V13H11V11ZM11 15H13V17H11V15ZM15 11H17V13H15V11ZM15 15H17V17H15V15Z"
+                                        fill="#5F5F5F" />
+                                    <path
+                                        d="M5 22H19C20.103 22 21 21.103 21 20V6C21 4.897 20.103 4 19 4H17V2H15V4H9V2H7V4H5C3.897 4 3 4.897 3 6V20C3 21.103 3.897 22 5 22ZM19 8L19.001 20H5V8H19Z"
+                                        fill="#5F5F5F" />
+                                </svg></button></div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </header>
+    <main class="gallery-page">
+        <div class="gallery-page__wrapper">
+            <div class="gallery-page__switch display-mode"><button class="display-mode__btn" type="button"
+                    data-mode="grid"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="8" y="16" width="6" height="6" fill="#C8C7C7" />
+                        <rect x="16" y="8" width="6" height="6" fill="#C8C7C7" />
+                        <rect x="16" y="16" width="6" height="6" fill="#C8C7C7" />
+                        <rect x="8" y="8" width="6" height="6" fill="#C8C7C7" />
+                        <rect y="16" width="6" height="6" fill="#C8C7C7" />
+                        <rect y="8" width="6" height="6" fill="#C8C7C7" />
+                        <rect x="16" width="6" height="6" fill="#C8C7C7" />
+                        <rect x="8" width="6" height="6" fill="#C8C7C7" />
+                        <rect width="6" height="6" fill="#C8C7C7" />
+                    </svg></button> <button class="display-mode__btn" type="button" data-mode="list"><svg
+                        viewBox="0 0 24 22" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" width="24.000000" height="22.000000" fill="none"
+                        customFrame="#000000">
+                        <g id="Group 13">
+                            <rect id="Rectangle 30" width="6.000000" height="6.000000" x="0.000000" y="0.000000"
+                                fill="rgb(200,199,199)" />
+                            <rect id="Rectangle 33" width="6.000000" height="6.000000" x="0.000000" y="8.000000"
+                                fill="rgb(200,199,199)" />
+                            <rect id="Rectangle 34" width="6.000000" height="6.000000" x="0.000000" y="16.000000"
+                                fill="rgb(200,199,199)" />
+                            <rect id="Rectangle 35" width="15.000000" height="2.000000" x="9.000000" y="10.000000"
+                                fill="rgb(200,199,199)" />
+                            <rect id="Rectangle 40" width="15.000000" height="2.000000" x="9.000000" y="18.000000"
+                                fill="rgb(200,199,199)" />
+                            <rect id="Rectangle 39" width="15.000000" height="2.000000" x="9.000000" y="2.000000"
+                                fill="rgb(200,199,199)" />
+                        </g>
+                    </svg></button></div>
+            <section class="gallery gallery--list" id="gallery"></section>
+            <p class="gallery-page__message" id="empty-state" hidden>Nothing found for the selected date range.</p>
+            <button class="gallery-page__more more-button" id="show-more" type="button">Load more</button>
+        </div>
+    </main><template id="gallery-card">
+        <article class="gallery__item media-card"><img class="media-card__photo" src="assets/img/img1.webp"
+                alt="Post preview" loading="lazy" />
+            <div class="media-card__meta media-card__meta--current"><strong class="media-card__label"
+                    data-title></strong>
+                <p class="media-card__line" data-primary-stats><span class="media-card__stat"><i
+                            class="fa-solid fa-heart"></i><span data-likes></span></span> <span
+                        class="media-card__stat"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18.000000" height="18.000000" fill="none">
+                            <rect id="ic:round-mode-comment" width="18.000000" height="18.000000" x="0.000000"
+                                y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+                            <path id="Vector"
+                                d="M16.5 3C16.5 2.175 15.825 1.5 15 1.5L3 1.5C2.175 1.5 1.5 2.175 1.5 3L1.5 12C1.5 12.825 2.175 13.5 3 13.5L13.5 13.5L16.5 16.5L16.5 3Z"
+                                fill="rgb(0,0,0)" fill-rule="nonzero" />
+                        </svg> <span data-comments></span></span></p>
+            </div>
+            <div class="media-card__meta media-card__meta--posted"><time class="media-card__date" datetime=""
+                    data-date></time>
+                <p class="media-card__line" data-date-stats><span class="media-card__stat"><i
+                            class="fa-solid fa-heart"></i><span data-date-likes></span></span> <span
+                        class="media-card__stat"><svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18.000000" height="18.000000" fill="none">
+                            <rect id="ic:round-mode-comment" width="18.000000" height="18.000000" x="0.000000"
+                                y="0.000000" fill="rgb(255,255,255)" fill-opacity="0" />
+                            <path id="Vector"
+                                d="M16.5 3C16.5 2.175 15.825 1.5 15 1.5L3 1.5C2.175 1.5 1.5 2.175 1.5 3L1.5 12C1.5 12.825 2.175 13.5 3 13.5L13.5 13.5L16.5 16.5L16.5 3Z"
+                                fill="rgb(0,0,0)" fill-rule="nonzero" />
+                        </svg> <span data-date-comments></span></span></p>
+            </div>
+            <div class="media-card__meta media-card__meta--type"><strong class="media-card__label">Image upload</strong>
+                <time class="media-card__date" datetime="" data-upload></time></div>
+        </article>
+    </template>
+</body>
+
+</html>
